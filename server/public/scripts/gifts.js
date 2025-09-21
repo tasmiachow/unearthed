@@ -7,10 +7,10 @@ const renderGifts = async () => {
         data.map(gift => {
             const card = document.createElement("div");
             card.classList.add("card");
-            
+
             const topContainer = document.createElement("div");
             topContainer.classList.add("top-container");
-            
+
             const bottomContainer = document.createElement("div");
             bottomContainer.classList.add("bottom-container");
 
@@ -23,7 +23,7 @@ const renderGifts = async () => {
             const price = document.createElement("p");
             price.textContent = `Price: ${gift.price}`;
             bottomContainer.appendChild(price);
-            
+
             const audience = document.createElement("p");
             audience.textContent = `Audience: ${gift.audience}`;
             bottomContainer.appendChild(audience);
@@ -46,3 +46,28 @@ const renderGifts = async () => {
 };
 
 renderGifts();
+
+const renderGift = async () => {
+    const requestedID = parseInt(window.location.href.split('/').pop());
+    const response = await fetch("/gifts");
+    const data = await response.json();
+    const giftContent = document.getElementById('gift-content');
+    const gift = data.find(gift => gift.id === requestedID);
+
+    if (gift) {
+        document.querySelector("#image").src = gift.image;
+        document.querySelector("#name").textContent = gift.name;
+        document.querySelector("#submittedBy").textContent = `Submitted by: ${gift.submittedBy}`;
+        document.querySelector("#pricePoint").textContent = `Price: ${gift.pricePoint}`;
+        document.querySelector("#audience").textContent = `Great for: ${gift.audience}`;
+        document.querySelector("#description").textContent = gift.description;
+        document.querySelector("#name").textContent = `UnEarthed - ${gift.name}`;
+        
+    } else {
+        const message = document.createElement("h2");
+        message.textContent = "No Gifts Available 😞";
+        giftContent.appendChild(message);
+    }
+};
+
+renderGift();
