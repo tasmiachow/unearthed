@@ -45,15 +45,6 @@ const renderGifts = async () => {
     }
 };
 
-const requestedUrl = window.location.href.split("/").pop();
-
-if (requestedUrl) {
-    window.location.href = "../404.html";
-}
-else {
-    renderGifts();
-}
-
 const renderGift = async () => {
     const requestedID = parseInt(window.location.href.split('/').pop());
     const response = await fetch("/gifts");
@@ -68,7 +59,7 @@ const renderGift = async () => {
         document.querySelector("#pricePoint").textContent = `Price: ${gift.pricePoint}`;
         document.querySelector("#audience").textContent = `Great for: ${gift.audience}`;
         document.querySelector("#description").textContent = gift.description;
-        document.querySelector("#name").textContent = `UnEarthed - ${gift.name}`;
+        document.title = `UnEarthed - ${gift.name}`;
         
     } else {
         const message = document.createElement("h2");
@@ -78,3 +69,12 @@ const renderGift = async () => {
 };
 
 renderGift();
+
+// const requestedUrl = window.location.href.split("/").pop();
+
+// if (requestedUrl) {
+//     window.location.href = "../404.html";
+// }
+// else {
+//     renderGifts();
+// }
