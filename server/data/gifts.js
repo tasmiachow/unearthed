@@ -1,5 +1,5 @@
 const giftData = [
-  {
+      {
       "id": 1,
       "name": "Disco Ball Candle",
       "pricePoint": "$",
