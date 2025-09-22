@@ -46,11 +46,17 @@ const renderGifts = async () => {
 };
 
 const renderGift = async () => {
+    console.log("hello");
     const requestedID = parseInt(window.location.href.split('/').pop());
     const response = await fetch("/gifts");
     const data = await response.json();
     const giftContent = document.getElementById('gift-content');
     const gift = data.find(gift => gift.id === requestedID);
+
+
+    if (!requestedID) {
+        return;
+    }
 
     if (gift) {
         document.querySelector("#image").src = gift.image;
@@ -70,11 +76,11 @@ const renderGift = async () => {
 
 renderGift();
 
-// const requestedUrl = window.location.href.split("/").pop();
+const requestedUrl = window.location.href.split("/").pop();
 
-// if (requestedUrl) {
-//     window.location.href = "../404.html";
-// }
-// else {
-//     renderGifts();
-// }
+if (requestedUrl) {
+    window.location.href = "../404.html";
+}
+else {
+    renderGifts();
+}

@@ -46,11 +46,17 @@ const renderGifts = async () => {
 };
 
 const renderGift = async () => {
+    console.log("hello");
     const requestedID = parseInt(window.location.href.split('/').pop());
     const response = await fetch("/gifts");
     const data = await response.json();
     const giftContent = document.getElementById('gift-content');
     const gift = data.find(gift => gift.id === requestedID);
+
+
+    if (!requestedID) {
+        return;
+    }
 
     if (gift) {
         document.querySelector("#image").src = gift.image;
@@ -68,13 +74,24 @@ const renderGift = async () => {
     }
 };
 
-renderGift();
+const requestedUrl = window.location.href.split("/");
 
-// const requestedUrl = window.location.href.split("/").pop();
-
-// if (requestedUrl) {
-//     window.location.href = "../404.html";
-// }
-// else {
-//     renderGifts();
-// }
+// https://www.domain.com/ (so for home page, length is 4)
+// home page
+if (requestedUrl.length === 4) {
+    if (requestedUrl.at(-1) === "") {
+        renderGifts();
+    } else if (requestedUrl.at(-1) !== "gifts") {
+        window.location.href = "../404.html";
+    }
+} else if (requestedUrl.length === 5) {
+    // /gifts/:id
+    if (requestedUrl.at(-2) === "gifts") {
+        renderGift();
+    } else {
+        window.location.href = "../404.html";
+    }
+} else {
+    console.log(requestedUrl);
+    window.location.href = "../404.html";
+}
