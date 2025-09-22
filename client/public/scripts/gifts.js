@@ -76,9 +76,8 @@ const renderGift = async () => {
 
 const requestedUrl = window.location.href.split("/");
 
-// https://www.domain.com/ (so for home page, length is 4)
-// home page
 if (requestedUrl.length === 4) {
+    // home page
     if (requestedUrl.at(-1) === "") {
         renderGifts();
     } else if (requestedUrl.at(-1) !== "gifts") {
@@ -92,6 +91,6 @@ if (requestedUrl.length === 4) {
         window.location.href = "../404.html";
     }
 } else {
-    console.log(requestedUrl);
+    // everything else
     window.location.href = "../404.html";
 }
