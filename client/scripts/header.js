@@ -7,7 +7,7 @@ const headerLeft = document.createElement('div')
 headerLeft.className='header-left'
 
 const headerImg = document.createElement('img')
-headerImg.src = 'logo.png'
+headerImg.src = '/logo.png'
 
 const headerH1 = document.createElement('h1')
 headerH1.textContent="UnEarthed"
