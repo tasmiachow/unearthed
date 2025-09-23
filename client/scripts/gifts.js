@@ -45,4 +45,5 @@ const renderGifts = async () => {
         mainContent.appendChild(message)
     }
 }
+
 renderGifts()

@@ -13,7 +13,8 @@ router.get('/', (req,res) => {
 })
 
 router.get('/:giftId', (req,res) => {
-    res.status(200).sendFile(path.resolve(__dirname, '../gift.html'))
+    res.sendFile(path.resolve(__dirname, '../../client/gift.html'))
 })
+
 
 export default router
