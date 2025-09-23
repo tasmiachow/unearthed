@@ -14,7 +14,7 @@ const giftData = [
       "name": "Lego Flower Bouquet Kit",
       "pricePoint": "$",
       "audience": "Green Thumbs",
-      "image":"https://tinyurl.com/ydpv2bt9",
+      "image":"https://www.lego.com/cdn/cs/set/assets/bltc4a6c2103a34f22e/10313_alt2.png?fit=crop&quality=80&width=800&height=800&dpr=1",
       "description":"A gift and fun activity to do together",
       "submittedBy":"Isabel",
       "submittedOn":"2023-02-14T12:32:00"
@@ -24,7 +24,7 @@ const giftData = [
       "name": "Nintendo Switch Lite",
       "pricePoint": "$$",
       "audience": "Gamers",
-      "image":"https://tinyurl.com/2cdfe59x",
+      "image":"https://i5.walmartimages.com/seo/Nintendo-Switch-Lite-Console-Turquoise-2019-New_eb16f789-1629-4be0-bebc-bc7396b9e4bd_1.b9a7b6794ab6369b5a9af8bed320d930.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
       "description":"A gift for gamers on-the-go",
       "submittedBy":"Mario",
       "submittedOn":"2022-09-13T11:01:00"
@@ -34,7 +34,7 @@ const giftData = [
       "name": "Nike Panda Dunks",
       "pricePoint": "$$",
       "audience": "Sneakerheads",
-      "image":"https://tinyurl.com/y9bzv8xd",
+      "image":"https://static.nike.com/a/images/t_default/4371ac31-97cd-4057-bd6e-41440e39f3b9/NIKE+DUNK+LOW+%28GS%29.png",
       "description":"A fan-favorite black and white color-blocking sneaker",
       "submittedBy":"Jason",
       "submittedOn":"2023-03-10T05:23:00"
@@ -44,7 +44,7 @@ const giftData = [
       "name": "Razer Kitty Headset",
       "pricePoint": "$$",
       "audience": "Gamers",
-      "image":"https://tinyurl.com/4pt84wry",
+      "image":"https://m.media-amazon.com/images/I/71RvZp8e3CL.jpg",
       "description":"Create the purrfect gaming look with your own killer kitty style",
       "submittedBy":"Pixie",
       "submittedOn":"2011-10-10T14:48:00"
