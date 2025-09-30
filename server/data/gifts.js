@@ -1,5 +1,5 @@
 const giftData = [
-      {
+    {
       "id": 1,
       "name": "Disco Ball Candle",
       "pricePoint": "$",
@@ -8,7 +8,7 @@ const giftData = [
       "description":"A party in a candle",
       "submittedBy":"Sasha",
       "submittedOn":"2022-09-04T14:48:00"
-  },
+    },
   {
       "id": 2,
       "name": "Lego Flower Bouquet Kit",

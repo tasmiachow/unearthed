@@ -19,7 +19,7 @@ async function createGiftsTable() {
             description TEXT NOT NULL,
             submittedBy VARCHAR(255) NOT NULL,
             submittedOn TIMESTAMP NOT NULL
-        )
+        );
     `
     try {
     const res = await pool.query(createTableQuery)
