@@ -16,7 +16,9 @@ const GiftDetails = ({data}) => {
             const data = await response.json();
             setGift(data);
         }
+
         fetchGiftsById();
+        
     }, [data, id]);
 
 

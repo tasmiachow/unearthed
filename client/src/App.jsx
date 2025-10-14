@@ -14,14 +14,13 @@ const App = () => {
 
   useEffect(() => {
       const fetchGifts = async () => {
-      const response = await fetch('http://localhost:3001/gifts');
-      const data = await response.json();
-      setGifts(data);
+        const response = await fetch('http://localhost:3001/gifts');
+        const data = await response.json();
+        setGifts(data);
     }
-    fetchGifts();
-  
-    
 
+    fetchGifts();
+    
   }, []);
 
 
