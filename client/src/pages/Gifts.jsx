@@ -18,7 +18,7 @@ const Gifts = (props) => {
                 gifts && gifts.length > 0 ?
                 gifts.map((gift,index) => 
                     
-                   <Card id={gift.id} 
+                   <Card key={gift.id} id={gift.id} 
                          image={gift.image} 
                          name={gift.name} 
                          pricepoint={gift.pricepoint} 
