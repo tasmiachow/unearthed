@@ -5,10 +5,11 @@ import cors from 'cors';
 
 
 const app = express()
-app.use(express.json()); //CHANGED THIS --> HAS TO COME BEFORE Otherwise, req.body will be undefined when your controller tries to destructure it.
-
 
 app.use(cors());
+app.use(express.json()); //CHANGED THIS --> HAS TO COME BEFORE 
+
+
 
 app.get('/', (req, res) => {
     res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">UnEarthed API</h1>')
