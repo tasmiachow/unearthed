@@ -7,7 +7,7 @@ import cors from 'cors';
 const app = express()
 
 app.use(cors());
-app.use(express.json()); //CHANGED THIS --> HAS TO COME BEFORE 
+app.use(express.json()); //CHANGED THIS --> HAS TO COME BEFORE ALL ROUTES
 
 
 
