@@ -30,21 +30,31 @@ const CreateGift = () => {
         })
     }
     
-    const createGift = (event) => {
+    const createGift = async (event) => {
         event.preventDefault()
+        try{
+            
+            const response = await fetch('http://localhost:3001/gifts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                },
+            body: JSON.stringify(gift),
+            });
+             if (!response.ok) {
+                const error = await response.json();
+                console.error('Failed to submit gift:', error);
+                alert('Gift submission failed. Check console for details.');
+                return;
+            }
 
-        const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(gift),
+            window.location = '/';
         }
-
-        const response = fetch('/gifts', options);
-
-        window.location = '/';
-    }
+        catch(err){
+            console.error('Network error:', err);
+            alert('Network error. Check if your backend is running.');
+        }
+    };
 
     return (
         <div className='CreateGift'>

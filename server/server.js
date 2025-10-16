@@ -5,6 +5,8 @@ import cors from 'cors';
 
 
 const app = express()
+app.use(express.json()); //CHANGED THIS --> HAS TO COME BEFORE Otherwise, req.body will be undefined when your controller tries to destructure it.
+
 
 app.use(cors());
 
@@ -13,7 +15,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/gifts', giftsRouter)
-app.use(express.json());
 
 const PORT = process.env.PORT || 3001
 

@@ -18,7 +18,7 @@ const EditGift = () => {
 
     useEffect(() => {
         const fetchGiftById = async () => {
-            const response = await fetch(`/gifts/${id}`)
+            const response = await fetch(`http://localhost:3001/gifts/${id}`)
             const data = await response.json()
             setGift(data)
         }
@@ -49,7 +49,7 @@ const EditGift = () => {
         }
 
         console.log("HII");
-       fetch(`/gifts/${id}`, options);
+       fetch(`http://localhost:3001/gifts/${id}`, options);
 
        window.location = '/';
     }
@@ -61,7 +61,7 @@ const EditGift = () => {
             method: 'DELETE'
         }
 
-        fetch(`/gifts/${id}`, options);
+        fetch(`http://localhost:3001/gifts/${id}`, options);
         window.location = '/';
 
     }
